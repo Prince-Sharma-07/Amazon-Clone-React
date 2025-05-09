@@ -1,0 +1,32 @@
+@font-face {
+    font-family: AmazonEmber;
+    src: url(./assets/Fonts/AmazonEmber_Rg.ttf);
+}
+
+@import 'tailwindcss';
+
+@theme{
+    --font-amazonEmber: AmazonEmber , "sans-serif";
+}
+
+:root{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+}
+
+@layer utilities {
+  .scrollbar-hidden {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;             /* Chrome, Safari, Opera */
+  }
+}
