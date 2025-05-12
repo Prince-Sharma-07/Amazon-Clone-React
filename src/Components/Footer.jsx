@@ -3,7 +3,7 @@ import { Navigate } from 'react-router'
 
 export default function Footer() {
     return (
-        <div className='absolute'>
+        <div className=''>
             <div className='font-[400] text-[13px] text-[#ffffff] bg-[#485769]'>Back to top</div>
  
             <div className='grid'></div>

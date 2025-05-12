@@ -1,32 +1,102 @@
-@font-face {
-    font-family: AmazonEmber;
-    src: url(./assets/Fonts/AmazonEmber_Rg.ttf);
-}
+@import "tailwindcss";
 
-@import 'tailwindcss';
+/* 100 */
+@font-face {
+  font-weight: 100;
+  font-family: AmazonEmber;
+  src: url(./assets/Fonts/AmazonEmber_Th.ttf);
+}
+@font-face {
+  font-weight: 200;
+  font-family: AmazonEmber;
+  src: url(./assets/Fonts/AmazonEmber_ThIt.ttf);
+  font-style: italic;
+}
+/* 300 */
+@font-face {
+  font-weight: 300;
+  font-family: AmazonEmber;
+  src: url(./assets/Fonts/AmazonEmber_Lt.ttf);
+}
+@font-face {
+  font-weight: 300;
+  font-family: AmazonEmber;
+  src: url(./assets/Fonts/AmazonEmber_LtIt.ttf);
+  font-style: italic;
+}
+/* 400 */
+@font-face {
+  font-weight: 400;
+  font-family: AmazonEmber;
+  src: url(./assets/Fonts/AmazonEmber_Rg.ttf);
+}
+@font-face {
+  font-weight: 400;
+  font-family: AmazonEmber;
+  src: url(./assets/Fonts/AmazonEmber_RgIt.ttf);
+  font-style: italic;
+}
+/* 500 */
+@font-face {
+  font-weight: 500;
+  font-family: AmazonEmber;
+  src: url(./assets/Fonts/Amazon-Ember-Medium.ttf);
+  font-style: italic;
+}
+@font-face {
+  font-weight: 500;
+  font-family: AmazonEmber;
+  src: url(./assets/Fonts/Amazon-Ember-MediumItalic.ttf);
+  font-style: italic;
+}
+/* 700 */
+@font-face {
+  font-weight: 700;
+  font-family: AmazonEmber;
+  src: url(./assets/Fonts/AmazonEmber_Bd.ttf);
+}
+@font-face {
+  font-weight: 700;
+  font-family: AmazonEmber;
+  src: url(./assets/Fonts/AmazonEmber_BdIt.ttf);
+  font-style: italic;
+}
+/* 900 */
+@font-face {
+  font-weight: 900;
+  font-family: AmazonEmber;
+  src: url(./assets/Fonts/AmazonEmber_He.ttf);
+  font-style: italic;
+}
+@font-face {
+  font-weight: 900;
+  font-family: AmazonEmber;
+  src: url(./assets/Fonts/AmazonEmber_HeIt.ttf);
+  font-style: italic;
+}
 
 @theme{
-    --font-amazonEmber: AmazonEmber , "sans-serif";
+  --font-amazonEmber: AmazonEmber, "sans-serif", "Ariel";
 }
 
-:root{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    height: 100%;
-    width: 100%;
+body {
+  height: 100%;
+  width: 100%;
 }
 
 @layer utilities {
   .scrollbar-hidden {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 
   .scrollbar-hidden::-webkit-scrollbar {
-    display: none;             /* Chrome, Safari, Opera */
+    display: none; /* Chrome, Safari, Opera */
   }
 }

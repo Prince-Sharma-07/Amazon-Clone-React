@@ -12,6 +12,7 @@ import Signin from './Pages/Signin'
 import Product from './Pages/Product'
 import Products from './Pages/Products'
 import PageLayout from './Components/PageLayout'
+import Cart from './Pages/Cart'
 
 const router = createBrowserRouter(
   [
@@ -44,6 +45,10 @@ const router = createBrowserRouter(
             }
           ]
         },
+        {
+          path: 'cart',
+          element: <Cart/>
+        }
       ]
     },
     {
