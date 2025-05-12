@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className='flex flex-col gap-4 px-2 relative top-[97px]'>
       <img src="/carousel1.jpg" alt="carousel_img_1" className="w-full h-auto" />
-      <div className='absolute inset-x-2 top-65 flex flex-wrap justify-start gap-[19px] p-5 bg-gradient-to-b from-transparent to-[#e3e6e6]'>
+      <div className='absolute inset-x-2 top-65 grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-4 p-5'>
         {sliceDataCard1.map(({ title, subCardData, redirect_label }) => <MainCard1 title={title} subData={subCardData} redirect_label={redirect_label} />)}
         <SliderCard title={sliderData1[0].category} redirect_label={"See all offers"} sliderData={sliderData1}/>
         {sliceDataCard2.map(({ product_id, product_name, img_link, discounted_price, category, actual_price }) => <MainCard2 product_name={product_name} actual_price={actual_price} category={category} img_link={img_link} discounted_price={discounted_price} product_id={product_id} />)}
@@ -22,7 +22,7 @@ export default function Home() {
 function SliderCard({ title, redirect_label , sliderData }) {
   const navigate = useNavigate()
   return (
-    <div className='flex flex-col gap-2 bg-white px-6 py-4'>
+    <div className='flex flex-col col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-4 gap-2 w-full bg-white px-6 py-4'>
       <div className='flex gap-4 items-center'>
         <span className='text-lg font-semibold'>{title.replaceAll('|' , " | ") ?? ""}</span>
         <span className='text-[#2162A1] text-md font-[400] cursor-pointer hover:text-[#0C3353]'>{redirect_label}</span>
@@ -37,11 +37,11 @@ function SliderCard({ title, redirect_label , sliderData }) {
 function MainCard1({ title, subData = [], redirect_label}) {
 
   return (
-    <div className='flex flex-col h-105 relative  font-amazonEmber gap-1 px-5 py-4 w-[24%] rounded-[1px] bg-white shadow-xl'>
+    <div className='flex flex-col h-105 relative  font-amazonEmber gap-1 px-5 py-4 w-full rounded-[1px] bg-white shadow-xl'>
 
       <span className='text-[21px] text-[#0f1111] h-fit font-[700] '>{title}</span>
 
-      <div  className=' h-full justify-around flex flex-col '>
+      <div  className=' h-full justify-around flex flex-col cursor-pointer'>
 
         {subData.length > 1 ?
           <div className='grid grid-cols-2 h-full gap-x-4 gap-y-2'>
@@ -62,7 +62,7 @@ function MainCard1({ title, subData = [], redirect_label}) {
 function MainCard2({ category, img_link, product_name, discounted_price, actual_price , product_id }) {
   const navigate = useNavigate()
   return (
-    <div onClick={()=>navigate(`/products/${product_id}`)} className='flex flex-col justify-between h-105 font-amazonEmber px-5 gap-2 py-4 w-[24%] rounded-[1px] bg-white shadow-xl '>
+    <div onClick={()=>navigate(`/products/${product_id}`)} className='flex flex-col justify-between h-105 font-amazonEmber px-5 gap-2 py-4 w-full rounded-[1px] bg-white shadow-xl '>
 
       <span className='text-[20px] text-[#0f1111] font-[600] break-all line-clamp-2'>{category?.replaceAll("|", " | ") ?? ""}</span>
       <img src={img_link} alt="" className='h-50 object-contain cursor-pointer' />
