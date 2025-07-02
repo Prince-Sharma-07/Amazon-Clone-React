@@ -4,11 +4,10 @@ import { useNavigate } from 'react-router'
 
 
 export default function Home() {
-  
   return (
-    <div className='flex flex-col gap-4 px-2 relative top-[97px]'>
-      <img src="/carousel1.jpg" alt="carousel_img_1" className="w-full h-auto" />
-      <div className='absolute inset-x-2 top-65 grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-4 p-5'>
+    <div className='flex flex-col gap-4 relative top-[97px]'>
+      <img src="/carousel1.jpg" alt="carousel_img_1" className="w-full px-2 h-auto" />
+      <div className='absolute bg-gradient-to-b from-[transparent] to-[#E3E6E6]/80 backdrop-blur-3xl inset-x-2 top-65 grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-4 p-5'>
         {sliceDataCard1.map(({ title, subCardData, redirect_label }) => <MainCard1 title={title} subData={subCardData} redirect_label={redirect_label} />)}
         <SliderCard title={sliderData1[0].category} redirect_label={"See all offers"} sliderData={sliderData1}/>
         {sliceDataCard2.map(({ product_id, product_name, img_link, discounted_price, category, actual_price }) => <MainCard2 product_name={product_name} actual_price={actual_price} category={category} img_link={img_link} discounted_price={discounted_price} product_id={product_id} />)}

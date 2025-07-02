@@ -76,10 +76,10 @@ export default function Product() {
 
               <div className='flex flex-col gap-2'>
                 <span className='flex gap-2'>
-                  <div class="w-[28px] h-[28px] overflow-hidden relative">
+                  <div className="w-[28px] h-[28px] overflow-hidden relative">
                     <img
                       src="/offers_sprite.png"
-                      class="absolute top-[-29px]" />
+                      className="absolute top-[-29px]" />
                   </div>
                   <span>offers</span>
                 </span>
