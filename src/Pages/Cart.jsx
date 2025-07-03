@@ -10,8 +10,8 @@ export default function Cart() {
   let img_url = null;
 
   return (
-    <div className='flex justify-between relative top-[97px] font-amazonEmber p-4 px-4 bg-[#EAEDED]'>
-      <div className='w-[78%] flex flex-col p-4 bg-white'>
+    <div className='flex max-md:flex-col justify-between relative top-[97px] font-amazonEmber p-4 px-4 bg-[#EAEDED]'>
+      <div className='w-[78%] max-md:w-full flex flex-col p-4 bg-white'>
         <h2 className='font-[400] text-[28px]'>Shopping Cart</h2>
         <div className='text-end text-[#565959] text-[14px] font-[400]'>Price</div>
         <hr className='text-[#ced4d4] size-[1]' />
@@ -34,7 +34,7 @@ export default function Cart() {
         }
       </div>
 
-      <div className='w-[21%] h-fit flex flex-col gap-4 p-6 bg-white'>
+      <div className='w-[21%] max-md:w-full h-fit flex flex-col gap-4 p-6 bg-white'>
 
         {cart.length ?
           <div className='flex gap-2 items-center'>
@@ -68,7 +68,7 @@ function CartProduct({ product_name, img_link, discount_percentage, discounted_p
       <div className='w-[18%]'><img onClick={() => navigate(`/products/${product_id}`)} src={img_link} className='h-40 w-full object-contain' alt="" /></div>
       <div className='flex flex-col justify-between gap-2 w-[62%]'>
         <div className='flex flex-col'>
-          <span className='text-[18px] font-[400] line-clamp-2'>{product_name}</span>
+          <span className='text-[18px] font-[400] line-clamp-2 max-md:line-clamp-1'>{product_name}</span>
           <span className='text-[12px] text-[#067d62]'>In stock</span>
         </div>
         <div>
@@ -84,17 +84,17 @@ function CartProduct({ product_name, img_link, discount_percentage, discounted_p
           <BreakPoint />
           <button onClick={() => deleteFromCart(product_id)} className='hover:text-[#0c3353] text-[#2162A1] hover:underline cursor-pointer'>Delete</button>
           <BreakPoint />
-          <button className='hover:text-[#0c3353] text-[#2162A1] hover:underline cursor-pointer'>Save for later</button>
+          <button className='hover:text-[#0c3353] text-[#2162A1] hover:underline cursor-pointer max-md:hidden'>Save for later</button>
           <BreakPoint />
-          <button className='hover:text-[#0c3353] text-[#2162A1] hover:underline cursor-pointer'>See more like this</button>
+          <button className='hover:text-[#0c3353] text-[#2162A1] hover:underline cursor-pointer max-md:hidden'>See more like this</button>
           <BreakPoint />
-          <button className='hover:text-[#0c3353] text-[#2162A1] hover:underline cursor-pointer'>Share</button>
+          <button className='hover:text-[#0c3353] text-[#2162A1] hover:underline cursor-pointer max-md:hidden'>Share</button>
         </div>
       </div>
       <div className='flex flex-col w-[15%]'>
         <div className='flex gap-2 items-center justify-end w-full'>
           <span className='bg-[#CC0C39] text-white p-1 px-2 text-xs rounded-xs font-[600] text-nowrap'>{discount_percentage} off</span>
-          <span className='text-[12px] font-[700] text-nowrap text-[#CC0C39]'>Limited time deal</span>
+          <span className='text-[12px] font-[700] text-nowrap text-[#CC0C39] max-md:hidden'>Limited time deal</span>
         </div>
         <div className='flex justify-end w-full text-[18px] font-[700]'>{discounted_price}.00</div>
         <div className='text-xs font-[400] font-amazonEmber text-[#565959] gap-1 flex self-end p-[3.5px]'>M.R.P:
@@ -109,6 +109,6 @@ function CartProduct({ product_name, img_link, discount_percentage, discounted_p
 
 function BreakPoint() {
   return (
-    <span className='text-[#ced4d4] text-[15px] font-thin flex '> | </span>
+    <span className='text-[#ced4d4] text-[15px] font-thin flex max-md:hidden'> | </span>
   )
 }

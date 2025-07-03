@@ -12,7 +12,7 @@ export default function Signup() {
         <img src={AmazonLogo} alt="Logo" className='h-8' />
         <span className='mb-1'>.in</span>
       </div>
-      <form onSubmit={e=>e.preventDefault()} className='flex flex-col gap-4 border rounded-md w-[23%] justify-center items-stretch px-8 py-6'>
+      <form onSubmit={e=>e.preventDefault()} className='flex flex-col gap-4 border rounded-md xl:w-[23%] lg:w-[30%] md:w-[40%] sm:w-[50%] w-[80%] justify-center items-stretch px-8 py-6'>
         <h2 className='text-[20px] font-[400]'>Sign in or create account</h2>
         <div className='flex flex-col items-stretch'>
           <label htmlFor='username' className='text-[14px] font-[700]' children={'Enter mobile number or email'} />

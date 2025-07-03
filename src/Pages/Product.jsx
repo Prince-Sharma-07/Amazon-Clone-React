@@ -24,16 +24,16 @@ export default function Product() {
 
       <div className='flex flex-col w-full h-auto overflow-auto gap-2'>
 
-        <div className='flex justify-between w-[100%] px-6 gap-4 relative top-[120px] font-amazonEmber text-[#0f1111]'>
-
+        <div className='flex max-md:flex-col justify-between w-[100%] px-6 gap-4 relative top-[120px] font-amazonEmber text-[#0f1111]'>
+          <h1 className='md:hidden'>{product_name}</h1>
           {/* Product Image  1st section*/}
-          <div className='w-[45%]'><img src={img_link} alt="product_image" className='h-150 w-full object-contain'/></div>
+          <div className='max-md:w-full w-[45%]'><img src={img_link} alt="product_image" className='h-150 w-full object-contain'/></div>
 
           {/* Container for section 2 & 3 */}
-          <div className='w-[55%] flex overflow-auto scrollbar-hidden'>
+          <div className='w-[55%] max-md:w-full flex overflow-auto scrollbar-hidden'>
 
             {/* Product Details 2nd Section*/}
-            <div className='flex w-[70%] h-screen flex-col gap-2 px-10'>
+            <div className='flex w-[70%] max-md:hidden h-screen flex-col gap-2 px-10'>
 
               <span className='text-[#0f1111] font-[400] text-[24px]'>{product_name}</span>
 
@@ -102,7 +102,7 @@ export default function Product() {
             </div>
 
             {/* Product Purchase Card Section 3 */}
-            <div className='w-[30%] h-150 p-4 flex flex-col gap-3 border-[1px] border-[#ced4d4] rounded-b-md'>
+            <div className='w-[30%] max-md:w-full max-md:border-0 h-fit p-4 flex flex-col gap-3 border-[1px] border-[#ced4d4] rounded-b-md'>
               <span className='text-[28px] font-[400]'>{discounted_price}</span>
               <span className='text-[14px] font-[400]'>FREE delivery <strong>Tuesday, 13 May</strong> to <a href="#" className='hover:text-[#0c3353] text-[#2162A1] underline cursor-pointer'>Dehradun 248001</a> on your first order.</span>
               <span className='text-[14px] font-[400]'>Or fastest delivery <strong>Tomorrow, 9 May</strong>. Order within <span className='text-[#067d62] font-[400]'>7 hrs 41 mins. </span><a href="" className='hover:text-[#0c3353] text-[#2162A1] underline cursor-pointer'> Details</a></span>
