@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router'
 import { ProductsData } from '../Constants';
 import ChevronDown from '../assets/ChevronDown'
@@ -18,16 +18,21 @@ export default function Product() {
 
   const { img_link, product_name, discounted_price, rating, rating_count, actual_price, discount_percentage, about_product } = productData
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
+
+
   return (
 
     productData ? (
 
       <div className='flex flex-col w-full h-auto overflow-auto gap-2'>
 
-        <div className='flex max-md:flex-col justify-between w-[100%] px-6 gap-4 relative top-[120px] font-amazonEmber text-[#0f1111]'>
-          <h1 className='md:hidden'>{product_name}</h1>
+        <div className='flex max-md:flex-col justify-between w-[100%] px-6 gap-4 pt-[95px] md:pt-[120px] font-amazonEmber text-[#0f1111]'>
+          <h1 className='md:hidden text-[#0f1111] font-[400] text-[24px]'>{product_name}</h1>
           {/* Product Image  1st section*/}
-          <div className='max-md:w-full w-[45%]'><img src={img_link} alt="product_image" className='h-150 w-full object-contain'/></div>
+          <div className='max-md:w-full w-[45%]'><img src={img_link} alt="product_image" className='h-150 w-full object-contain' /></div>
 
           {/* Container for section 2 & 3 */}
           <div className='w-[55%] max-md:w-full flex overflow-auto scrollbar-hidden'>
@@ -48,7 +53,7 @@ export default function Product() {
                 </span>
 
                 <span className='flex justify-start gap-2 flex-1'>
-                  <a className='hover:text-[#0c3353] text-[#2162A1]  hover:underline cursor-pointer'>{rating_count} ratings</a>
+                  <a className='hover:text-[#0c3353] text-[#2162A1] hover:underline cursor-pointer'>{rating_count} ratings</a>
                   <span> | </span>
                   <a href="#" className='hover:text-[#0c3353] text-[#2162A1]  hover:underline cursor-pointer'>Search this page</a>
                 </span>
@@ -127,13 +132,13 @@ export default function Product() {
                 </select>
               </label>
               <button onClick={() => {
-                addToCart(productId, quantityValue , discounted_price)
+                addToCart(productId, quantityValue, discounted_price)
                 navigate('/cart')
               }
               } className='p-[6px] px-[9px] border-none text-[13px] font-[400] text-[#0f1111] cursor-pointer bg-[#FFD814] hover:bg-[#FFCE12] rounded-2xl'>Add to cart</button>
               <button className='p-[6px] px-[9px] border-none text-[13px] font-[400] text-[#0f1111] cursor-pointer bg-[#FFA41C] hover:bg-[#FA8900] rounded-2xl'>Buy Now</button>
               <label><input className='size-[14px] text-[14px] font-[400]' type="checkbox" /> Add gift options</label>
-              <hr className='text-[#ced4d4] size-[1]'/>
+              <hr className='text-[#ced4d4] size-[1]' />
               <button className='p-[6px] px-[9px] flex justify-start border-[#888C8C] border-[1px] rounded-md font-[400] text-[13px]'>Add to Wish List</button>
             </div>
 

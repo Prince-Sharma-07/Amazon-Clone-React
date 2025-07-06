@@ -8,15 +8,13 @@ export default function Products() {
   const { filteredData = [] } = useProductsContext()
 
   return (
-    <div className='flex justify-between relative top-[97px] font-amazonEmber p-4 px-4 bg-[#EAEDED]'>
+    <div className='flex justify-between max-md:justify-center pt-28 font-amazonEmber p-4 px-4 bg-[#EAEDED]'>
 
-      <div className='w-[18%] h-fit flex flex-col gap-4 p-6 bg-white'>
-
+      <div className='max-md:hidden w-[18%] h-fit flex flex-col gap-4 p-6 bg-white'>
 
         <div className='flex gap-2 items-center'>
           <span>Filter Products</span>
         </div>
-
 
         <div className='flex flex-col'>
           <span className='text-[18px] font-[400]'>Brands:</span>
@@ -33,7 +31,7 @@ export default function Products() {
         <div className='text-end text-[#565959] text-[14px] font-[400]'>Price</div>
         <hr className='text-[#ced4d4] size-[1]' />
 
-        <div className='w-full grid grid-cols-4 gap-x-4 gap-y-8 p-4'>
+        <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-2 md:gap-3 lg:gap-4 xl:gap-4 p-4 justify-items-center'>
           {filteredData.length ?
             filteredData.map((item) => {
               const { product_name, img_link, discounted_price, discount_percentage, actual_price, product_id } = ProductsData.find(({ product_id }) => product_id === item.product_id)
@@ -57,7 +55,7 @@ function Product({ product_name, img_link, discount_percentage, discounted_price
   const navigate = useNavigate()
   const { addToCart } = useCart()
   return (
-    <div onClick={() => navigate(`/products/${product_id}`)} className='flex flex-col items-center justify-between gap-4 font-amazonEmber'>
+    <div onClick={() => navigate(`/products/${product_id}`)} className='flex flex-col items-center justify-between gap-4 font-amazonEmber max-w-[250px] w-full'>
       <div className='w-full'><img src={img_link} className='h-40 w-full object-contain cursor-pointer' alt="" /></div>
       <div className='flex flex-col justify-between gap-2 w-full'>
         <div className='flex flex-col'>

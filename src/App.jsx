@@ -41,13 +41,13 @@ const router = createBrowserRouter(
             },
             {
               path: ':productId',
-              element: <Product/>
+              element: <Product />
             }
           ]
         },
         {
           path: 'cart',
-          element: <Cart/>
+          element: <Cart />
         }
       ]
     },
@@ -62,9 +62,10 @@ const router = createBrowserRouter(
 
 export default function App() {
 
-  return (<>
-     <RouterProvider router={router} />
-  </>
+  return (
+  <div className="min-h-screen">
+    <RouterProvider router={router} />
+  </div>
   )
 }
 

@@ -10,7 +10,7 @@ export default function Cart() {
   let img_url = null;
 
   return (
-    <div className='flex max-md:flex-col justify-between relative top-[97px] font-amazonEmber p-4 px-4 bg-[#EAEDED]'>
+    <div className='flex max-md:flex-col justify-between pt-[114px] font-amazonEmber p-4 px-4 bg-[#EAEDED]'>
       <div className='w-[78%] max-md:w-full flex flex-col p-4 bg-white'>
         <h2 className='font-[400] text-[28px]'>Shopping Cart</h2>
         <div className='text-end text-[#565959] text-[14px] font-[400]'>Price</div>

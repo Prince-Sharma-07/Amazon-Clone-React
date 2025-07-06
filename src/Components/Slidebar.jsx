@@ -16,7 +16,7 @@ export default function Slidebar({toggleSlideBar = false , handleHamburger = ()=
         {slideBarData.map(({ title, content }) =>
           <div className='w-full '>
             <SlidebarBlock title={title} content={content} />
-            <hr className='text-[#ced4d4] size-[14px]' />
+            <hr className='text-[#ced4d4] w-full' />
           </div>)}
       </div>
     </div>

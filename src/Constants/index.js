@@ -4464,11 +4464,11 @@ export const sliceDataCard1 = [
 
 ]
 
-export const sliceDataCard2 = ProductsData.slice(54, 62)
+export const sliceDataCard2 = ProductsData.slice(24, 32)
 
-export const sliderData1 = ProductsData.slice(84,100)
+export const sliderData1 = ProductsData.slice(64,80)
 
-export const sliderData2 = ProductsData.slice(10,26)
+export const sliderData2 = ProductsData.slice(34 , 53)
 
 export const categoriesData = [
   "Fresh",
