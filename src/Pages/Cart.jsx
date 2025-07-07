@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router';
 import { ProductsData } from '../Constants';
 import { useCart } from '../Contexts/CartContext'
 import greenTick from '../assets/greenTick.svg'
+import { useProductsContext } from '../Contexts/ProductsContext';
 
 
 export default function Cart() {
@@ -9,8 +10,10 @@ export default function Cart() {
   const { totalItems = 0, cart = [], subTotalFormatted = 0 } = useCart();
   let img_url = null;
 
+  const {ref2} = useProductsContext()
+
   return (
-    <div className='flex max-md:flex-col justify-between pt-[114px] font-amazonEmber p-4 px-4 bg-[#EAEDED]'>
+    <div ref={ref2} className='flex max-md:flex-col justify-between pt-[114px] font-amazonEmber p-4 px-4 bg-[#EAEDED]'>
       <div className='w-[78%] max-md:w-full flex flex-col p-4 bg-white'>
         <h2 className='font-[400] text-[28px]'>Shopping Cart</h2>
         <div className='text-end text-[#565959] text-[14px] font-[400]'>Price</div>

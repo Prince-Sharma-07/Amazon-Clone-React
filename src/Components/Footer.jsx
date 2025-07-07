@@ -1,8 +1,6 @@
 import AmazonLogo from '../assets/amazonLogoWhite.svg'
-import { useProductsContext } from '../Contexts/ProductsContext'
 import Flag from '../assets/flag.svg'
-export default function Footer() {
-    const { ref } = useProductsContext()
+export default function Footer({backToTop}) {
 
     const cat1 = ["About Amazon", "Careers", "Press Releases", "Amazon Science"]
     const cat2 = ["Facebook", "Twitter", "Instagram"]
@@ -29,7 +27,7 @@ export default function Footer() {
     return (
         <div className='w-full bg-white flex flex-col items-center'>
             <div onClick={() => {
-                ref.current.scrollIntoView({ behaviour: 'smooth' })
+                backToTop.current.scrollIntoView({ behaviour: 'smooth' })
             }
             } className='font-[400] text-[13px] text-[#ffffff] bg-[#37475A] hover:bg-[#485769] text-center p-4 cursor-pointer w-full'
             >Back to top</div>

@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { sliceDataCard1, sliderData1, sliderData2, sliceDataCard2 } from '../Constants'
 import { useNavigate } from 'react-router'
-import { useProductsContext } from '../Contexts/ProductsContext';
 
 
 export default function Home() {
@@ -21,12 +20,11 @@ export default function Home() {
     };
   }, []);
 
-  const { ref } = useProductsContext()
   return (
-    <div ref={ref} className='flex flex-col gap-4 min-h-screen items-center bg-[#E3E6E6] max-md:pt-[80px] md:pt-[97px]'>
+    <div className='flex flex-col gap-4 min-h-screen items-center bg-[#E3E6E6] max-md:pt-[80px] md:pt-[97px]'>
 
       <div className='flex relative'>
-        <div className='absolute bg-gradient-to-b from-[transparent] to-[#E3E6E6] w-full h-80 bottom-0'></div>
+        <div className='absolute bg-gradient-to-b from-[transparent] to-[#E3E6E6] w-full h-20 sm:h-40 md:h-60 lg:h-80 bottom-0'></div>
         <button className='absolute text-4xl left-2 px-4 rounded-md border-2 border-transparent hover:border-[#0A7CD1] hover:outline-2 outline-white py-5 sm:py-10 md:py-15 lg:py-20 xl:py-26 m-[1px] cursor-pointer' onClick={() => setI(prev => {
           if (prev == 0) return prev + 5
           return prev - 1

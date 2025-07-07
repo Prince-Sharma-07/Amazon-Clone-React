@@ -1,11 +1,10 @@
-import { createContext , useContext, useRef, useState  } from 'react'
+import { createContext , useContext, useState  } from 'react'
 import { ProductsData } from '../Constants'
 
 const productsContext = createContext(null)
 
 export default function ProductsContextProvider({children}) {
     const [filteredData , setFilteredData] = useState(ProductsData)
-    const ref = useRef(null)
 
     function handleSearch(inputValue){
         const searchValue = inputValue.replaceAll(' ' , '')
@@ -23,7 +22,7 @@ export default function ProductsContextProvider({children}) {
     }
 
   return (
-    <productsContext.Provider value={{filteredData , handleSearch , useProductsContext , ref}}>
+    <productsContext.Provider value={{filteredData , handleSearch , useProductsContext}}>
        {children}
     </productsContext.Provider>
   )
