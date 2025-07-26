@@ -1,25 +1,10 @@
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { sliceDataCard1, sliderData1, sliderData2, sliceDataCard2 } from '../Constants'
 import { useNavigate } from 'react-router'
 
 
 export default function Home() {
   const [i, setI] = useState(0);
-  const interval = useRef(null)
-
-  useEffect(() => {
-    if (interval.current !== null) return;
-
-    interval.current = setInterval(() => {
-      setI(prev => (prev + 1) % 6);
-    }, 5000);
-
-    return () => {
-      clearInterval(interval.current);
-      interval.current = null;
-    };
-  }, []);
-
   return (
     <div className='flex flex-col gap-4 min-h-screen items-center bg-[#E3E6E6] max-md:pt-[80px] md:pt-[97px]'>
 
